@@ -5,5 +5,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  constructor() {
+    console.log('start');
+  }
   name = 'Jean-Louis';
 }
