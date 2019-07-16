@@ -9,5 +9,5 @@ export class AppComponent {
   constructor() {
     console.log('start', environment.serverUrl);
   }
-  name = 'Jean-Louis';
+
 }
