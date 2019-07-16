@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+const toto = 45;
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
