@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-question',
@@ -10,13 +11,14 @@ export class AddQuestionComponent implements OnInit {
 
   f = new FormGroup({});
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
   submit() {
     console.log('submit');
+    this.router.navigateByUrl('/setup');
   }
 
 }
