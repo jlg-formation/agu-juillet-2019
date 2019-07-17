@@ -1,7 +1,7 @@
 <form [formGroup]="f" (ngSubmit)="submit()">
   <label>
     <div>Nom du Quizz</div>
-    <input type="text" placeholder="Ex: Les capitales d'Europe">
+    <input type="text" placeholder="Ex: Les capitales d'Europe" formControlName="name">
   </label>
-  <button>Suivant</button>
+  <button [disabled]="f.invalid">Suivant</button>
 </form>
