@@ -12,11 +12,9 @@ export class CreateComponent implements OnInit {
     name: new FormControl('', Validators.required)
   });
 
-  constructor(private elt: ElementRef) { }
+  constructor() { }
 
   ngOnInit() {
-    // set the focus on the input field.
-    this.elt.nativeElement.querySelector('input').focus();
   }
 
   submit() {

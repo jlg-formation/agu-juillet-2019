@@ -8,6 +8,7 @@ import { LayoutModule } from './layout/layout.module';
 import { HomeComponent } from './routes/home/home.component';
 import { LegalComponent } from './routes/legal/legal.component';
 import { CreateComponent } from './routes/create/create.component';
+import { WidgetModule } from './widget/widget.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { CreateComponent } from './routes/create/create.component';
     ReactiveFormsModule,
     AppRoutingModule,
     LayoutModule,
+    WidgetModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
