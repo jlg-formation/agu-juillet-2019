@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -12,9 +12,11 @@ export class CreateComponent implements OnInit {
     name: new FormControl('', Validators.required)
   });
 
-  constructor() { }
+  constructor(private elt: ElementRef) { }
 
   ngOnInit() {
+    // set the focus on the input field.
+    this.elt.nativeElement.querySelector('input').focus();
   }
 
   submit() {
