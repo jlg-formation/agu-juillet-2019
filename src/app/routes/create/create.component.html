@@ -1,1 +1,7 @@
-<p>create works!</p>
+<form [formGroup]="f" (ngSubmit)="submit()">
+  <label>
+    <div>Nom du Quizz</div>
+    <input type="text" placeholder="Ex: Les capitales d'Europe">
+  </label>
+  <button>Suivant</button>
+</form>
