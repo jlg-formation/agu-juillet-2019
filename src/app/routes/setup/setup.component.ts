@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { QuizzService } from 'src/app/quizz.service';
+import { Quizz } from 'src/app/quizz';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-setup',
@@ -7,11 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SetupComponent implements OnInit {
 
-  name = 'toto';
-  nbr = 0;
-  constructor() { }
+  q: Quizz;
+  constructor(private quizz: QuizzService, private router: Router) { }
 
   ngOnInit() {
+    this.q = this.quizz.getCurrent();
+    if (!this.q) {
+      this.router.navigateByUrl('/');
+    }
   }
 
 }
