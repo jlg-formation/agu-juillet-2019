@@ -3,5 +3,19 @@
 @import "../node_modules/normalize.css/normalize.css";
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+button {
+  background: #eee;
+  border: 1px solid #eee;
+  &:not([disabled]) {
+    cursor: pointer;
+    &:hover {
+      background: #ddd;
+    }
+    &:active {
+      background: #ccc;
+    }
+  }
 }
