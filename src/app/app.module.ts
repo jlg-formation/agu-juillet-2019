@@ -9,13 +9,15 @@ import { HomeComponent } from './routes/home/home.component';
 import { LegalComponent } from './routes/legal/legal.component';
 import { CreateComponent } from './routes/create/create.component';
 import { WidgetModule } from './widget/widget.module';
+import { SetupComponent } from './routes/setup/setup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LegalComponent,
-    CreateComponent
+    CreateComponent,
+    SetupComponent
   ],
   imports: [
     BrowserModule,
