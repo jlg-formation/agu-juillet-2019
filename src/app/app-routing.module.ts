@@ -4,6 +4,7 @@ import { HomeComponent } from './routes/home/home.component';
 import { LegalComponent } from './routes/legal/legal.component';
 import { CreateComponent } from './routes/create/create.component';
 import { SetupComponent } from './routes/setup/setup.component';
+import { AddQuestionComponent } from './routes/add-question/add-question.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'legal', component: LegalComponent },
   { path: 'create', component: CreateComponent },
   { path: 'setup', component: SetupComponent },
+  { path: 'add-question', component: AddQuestionComponent },
 ];
 
 @NgModule({

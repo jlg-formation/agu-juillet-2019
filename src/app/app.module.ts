@@ -10,6 +10,7 @@ import { LegalComponent } from './routes/legal/legal.component';
 import { CreateComponent } from './routes/create/create.component';
 import { WidgetModule } from './widget/widget.module';
 import { SetupComponent } from './routes/setup/setup.component';
+import { AddQuestionComponent } from './routes/add-question/add-question.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SetupComponent } from './routes/setup/setup.component';
     HomeComponent,
     LegalComponent,
     CreateComponent,
-    SetupComponent
+    SetupComponent,
+    AddQuestionComponent
   ],
   imports: [
     BrowserModule,
