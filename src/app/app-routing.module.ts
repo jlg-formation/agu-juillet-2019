@@ -5,6 +5,7 @@ import { LegalComponent } from './routes/legal/legal.component';
 import { CreateComponent } from './routes/create/create.component';
 import { SetupComponent } from './routes/setup/setup.component';
 import { AddQuestionComponent } from './routes/add-question/add-question.component';
+import { FinishedComponent } from './routes/finished/finished.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'create', component: CreateComponent },
   { path: 'setup', component: SetupComponent },
   { path: 'add-question', component: AddQuestionComponent },
+  { path: 'finished', component: FinishedComponent },
 ];
 
 @NgModule({

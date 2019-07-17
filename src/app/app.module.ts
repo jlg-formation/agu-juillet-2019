@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { CreateComponent } from './routes/create/create.component';
 import { WidgetModule } from './widget/widget.module';
 import { SetupComponent } from './routes/setup/setup.component';
 import { AddQuestionComponent } from './routes/add-question/add-question.component';
+import { FinishedComponent } from './routes/finished/finished.component';
 
 @NgModule({
   declarations: [
@@ -19,11 +21,14 @@ import { AddQuestionComponent } from './routes/add-question/add-question.compone
     LegalComponent,
     CreateComponent,
     SetupComponent,
-    AddQuestionComponent
+    AddQuestionComponent,
+    FinishedComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    FontAwesomeModule,
+
     AppRoutingModule,
     LayoutModule,
     WidgetModule,
