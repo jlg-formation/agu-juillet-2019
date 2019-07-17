@@ -1,0 +1,11 @@
+:host {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 18em;
+}
+
+button {
+  align-self: stretch;
+  margin: 0.5em 0;
+}
