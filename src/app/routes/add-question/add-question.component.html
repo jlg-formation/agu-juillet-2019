@@ -1,1 +1,24 @@
-<p>add-question works!</p>
+<h1>Ajouter une question</h1>
+<form [formGroup]="f" (ngSubmit)="submit()">
+  <label>
+    <div>Libellé</div>
+    <textarea rows="3"></textarea>
+  </label>
+  <div class="answers">
+    <div class="left">
+      <div *ngFor="let i of ['A', 'B', 'C', 'D']">
+        <span>{{i}}:</span>
+        <input type="text">
+      </div>
+    </div>
+    <div class="right">
+      <div *ngFor="let i of ['A', 'B', 'C', 'D']">
+        <input type="radio">
+      </div>
+    </div>
+  </div>
+  <div class="buttons">
+    <button>Annuler</button>
+    <button class="primary">Ajouter</button>
+  </div>
+</form>

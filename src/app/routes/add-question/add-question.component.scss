@@ -1,0 +1,19 @@
+form {
+  display: flex;
+  flex-flow: column;
+  label {
+    align-self: stretch;
+    display: flex;
+    flex-flow: column;
+  }
+  .answers {
+    display: flex;
+    align-items: stretch;
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 0;
+}
