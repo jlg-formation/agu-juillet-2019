@@ -20,4 +20,9 @@ export class SetupComponent implements OnInit {
     }
   }
 
+  finish() {
+    this.quizz.storeQuizz(this.q);
+    this.router.navigateByUrl('/finished');
+  }
+
 }

@@ -5,7 +5,6 @@ import { Quizz, Question } from './quizz';
   providedIn: 'root'
 })
 export class QuizzService {
-
   constructor() { }
 
   create(name: string) {
@@ -28,5 +27,24 @@ export class QuizzService {
     const q = this.getCurrent();
     q.questions.push(question);
     localStorage.setItem('current', JSON.stringify(q));
+  }
+
+  storeQuizz(q: Quizz) {
+    const list = this.getQuizzList();
+    list[q.name] = q;
+    localStorage.setItem('list', JSON.stringify(list));
+  }
+
+  getQuizzList() {
+    const str = localStorage.getItem('list');
+    if (str === null) {
+      return {};
+    }
+    const list = JSON.parse(str);
+    // tslint:disable-next-line: forin
+    for (const p in list) {
+      list[p].__proto__ = Quizz.prototype;
+    }
+    return list;
   }
 }
