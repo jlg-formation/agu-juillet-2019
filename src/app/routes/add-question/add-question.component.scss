@@ -5,10 +5,27 @@ form {
     align-self: stretch;
     display: flex;
     flex-flow: column;
+    padding-bottom: 1em;
   }
   .answers {
     display: flex;
     align-items: stretch;
+    .left, .right {
+      .input {
+        display: flex;
+        align-items: center;
+        height: 3em;
+      }
+    }
+    .right {
+      display: flex;
+      flex-flow: column;
+      .input {
+        display: flex;
+        width: 3em;
+        justify-content: space-evenly;
+      }
+    }
   }
 }
 

@@ -6,14 +6,14 @@
   </label>
   <div class="answers">
     <div class="left">
-      <div *ngFor="let i of ['A', 'B', 'C', 'D']">
-        <span>{{i}}:</span>
+      <div class="input" *ngFor="let i of ['A', 'B', 'C', 'D']">
         <input type="text">
       </div>
     </div>
     <div class="right">
-      <div *ngFor="let i of ['A', 'B', 'C', 'D']">
+      <div class="input" *ngFor="let i of ['A', 'B', 'C', 'D']">
         <input type="radio">
+        <span>{{i}}</span>
       </div>
     </div>
   </div>
