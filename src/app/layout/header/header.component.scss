@@ -4,6 +4,17 @@ header {
   height: 3em;
   padding: 0 0.5em;
   background: #eee;
+
+}
+
+a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  img {
+    width: 2em;
+  }
   span {
     padding-left: 0.3em;
     font-weight: bold;
@@ -11,6 +22,4 @@ header {
   }
 }
 
-img {
-  width: 2em;
-}
+
