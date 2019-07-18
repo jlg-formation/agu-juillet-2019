@@ -1,11 +1,14 @@
-<h1>Quizz: {{q.name}}</h1>
-<h2>Question {{p.questionId + 1}}</h2>
-<p>{{q.questions[p.questionId].label}}</p>
-<div class="answers">
-  <label *ngFor="let i of ['A', 'B', 'C', 'D' ]">
-    <input type="radio" [formControl]="answer" [value]="i">
-    <span>{{q.questions[p.questionId]['answer' + i]}}</span>
-  </label>
-</div>
-<button class="primary" (click)="next()" [disabled]="answer.invalid">Suivant</button>
+<ng-container *ngIf="q">
+  <h1>Quizz: {{q.name}}</h1>
+  <h2>Question {{p.questionId + 1}}</h2>
+  <p>{{q.questions[p.questionId].label}}</p>
+  <div class="answers">
+    <label *ngFor="let i of ['A', 'B', 'C', 'D' ]">
+      <input type="radio" [formControl]="answer" [value]="i">
+      <span>{{q.questions[p.questionId]['answer' + i]}}</span>
+    </label>
+  </div>
+  <button class="primary" (click)="next()" [disabled]="answer.invalid">Suivant</button>
+</ng-container>
+
 

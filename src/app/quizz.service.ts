@@ -14,12 +14,15 @@ export class QuizzService {
   }
 
   setCurrent(q: Quizz) {
+    if (!q) {
+      return;
+    }
     localStorage.setItem('current', JSON.stringify(q));
   }
 
   getCurrent(): Quizz {
     const str = localStorage.getItem('current');
-    if (str === null) {
+    if (!str) {
       return null;
     }
     const q = JSON.parse(str);
