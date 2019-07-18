@@ -7,8 +7,6 @@ import { QuizzProgress } from './quizz-progress';
 })
 export class QuizzService {
 
-  constructor() { }
-
   create(name: string) {
     const q = new Quizz();
     q.name = name;

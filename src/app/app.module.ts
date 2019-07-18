@@ -14,6 +14,8 @@ import { CreateComponent } from './routes/create/create.component';
 import { SetupComponent } from './routes/setup/setup.component';
 import { AddQuestionComponent } from './routes/add-question/add-question.component';
 import { FinishedComponent } from './routes/finished/finished.component';
+import { QuizzService } from './quizz.service';
+import { QuizzHttpService } from './quizz-http.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,7 @@ import { FinishedComponent } from './routes/finished/finished.component';
     WidgetModule,
     DoQuizzModule,
   ],
-  providers: [],
+  providers: [{ provide: QuizzService, useClass: QuizzHttpService }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
