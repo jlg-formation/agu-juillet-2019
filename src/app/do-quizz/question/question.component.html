@@ -1,7 +1,7 @@
 <h1>Quizz: {{q.name}}</h1>
 <h2>Question {{p.id + 1}}</h2>
-<div>{{q.questions[p.id].label}}</div>
-<div>
+<p>{{q.questions[p.id].label}}</p>
+<div class="answers">
   <label *ngFor="let i of ['A', 'B', 'C', 'D' ]">
     <input type="radio">
     <span>{{q.questions[p.id]['answer' + i]}}</span>
