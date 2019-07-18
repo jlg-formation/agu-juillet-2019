@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  serverUrl: 'http://quizz-dev.test.org',
+  serverUrl: 'http://localhost:3000/ws/quizz',
 };
 
 /*
