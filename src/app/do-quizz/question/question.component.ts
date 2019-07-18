@@ -45,7 +45,8 @@ export class QuestionComponent implements OnInit {
       this.router.navigate(['/', 'score']);
       return;
     }
-    this.router.navigate(['/', this.q.name, '/question/', this.p.questionId]);
+    this.answer.reset();
+    this.router.navigate(['/', this.q.name, 'question', this.p.questionId]);
   }
 
 }
