@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faSmileWink } from '@fortawesome/free-regular-svg-icons';
 import { QuizzService } from 'src/app/quizz.service';
+import { QuizzProgress } from 'src/app/quizz-progress';
 
 @Component({
   selector: 'app-score',
@@ -11,7 +12,7 @@ export class ScoreComponent implements OnInit {
 
   faSmileWink = faSmileWink;
   q = this.quizz.getCurrent();
-  p = { score: 2 };
+  p: QuizzProgress = this.quizz.getProgress();
   constructor(private quizz: QuizzService) { }
 
   ngOnInit() {
