@@ -49,6 +49,10 @@ export class QuizzService {
   }
 
   hasQuizz(): boolean {
-    return Object.keys(this.getQuizzList()).length > 0;
+    return this.getArray().length > 0;
+  }
+
+  getArray(): Quizz[] {
+    return Object.values(this.getQuizzList());
   }
 }
