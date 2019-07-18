@@ -47,4 +47,8 @@ export class QuizzService {
     }
     return list;
   }
+
+  hasQuizz(): boolean {
+    return Object.keys(this.getQuizzList()).length > 0;
+  }
 }
