@@ -1,5 +1,5 @@
 <h1>Choisis un quizz</h1>
 <div>
-  <button *ngFor="let q of quizz.getArray()">{{q.name}}</button>
+  <button *ngFor="let q of quizz.getArray()" [routerLink]="'/' + q.name + '/question/1'">{{q.name}}</button>
 </div>
 
