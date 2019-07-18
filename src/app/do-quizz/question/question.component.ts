@@ -3,6 +3,7 @@ import { Quizz } from 'src/app/quizz';
 import { QuizzService } from 'src/app/quizz.service';
 import { ActivatedRoute } from '@angular/router';
 import { QuizzProgress } from 'src/app/quizz-progress';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-question',
@@ -10,6 +11,8 @@ import { QuizzProgress } from 'src/app/quizz-progress';
   styleUrls: ['./question.component.scss']
 })
 export class QuestionComponent implements OnInit {
+
+  answer = new FormControl('', Validators.required);
 
   q: Quizz;
   p: QuizzProgress = { questionId: 0, score: 0 };

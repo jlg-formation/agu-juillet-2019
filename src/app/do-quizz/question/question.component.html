@@ -3,8 +3,9 @@
 <p>{{q.questions[p.questionId].label}}</p>
 <div class="answers">
   <label *ngFor="let i of ['A', 'B', 'C', 'D' ]">
-    <input type="radio">
+    <input type="radio" [formControl]="answer" [value]="i">
     <span>{{q.questions[p.questionId]['answer' + i]}}</span>
   </label>
 </div>
-<button class="primary" routerLink="/score">Suivant</button>
+<button class="primary" routerLink="/score" [disabled]="answer.invalid">Suivant</button>
+
