@@ -1,10 +1,10 @@
 <h1>Quizz: {{q.name}}</h1>
-<h2>Question {{p.id + 1}}</h2>
-<p>{{q.questions[p.id].label}}</p>
+<h2>Question {{p.questionId + 1}}</h2>
+<p>{{q.questions[p.questionId].label}}</p>
 <div class="answers">
   <label *ngFor="let i of ['A', 'B', 'C', 'D' ]">
     <input type="radio">
-    <span>{{q.questions[p.id]['answer' + i]}}</span>
+    <span>{{q.questions[p.questionId]['answer' + i]}}</span>
   </label>
 </div>
 <button class="primary" routerLink="/score">Suivant</button>
