@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Quizz } from 'src/app/quizz';
 import { QuizzService } from 'src/app/quizz.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { QuizzProgress } from 'src/app/quizz-progress';
 import { FormControl, Validators } from '@angular/forms';
 
@@ -16,7 +16,10 @@ export class QuestionComponent implements OnInit {
 
   q: Quizz;
   p: QuizzProgress = { questionId: 0, score: 0 };
-  constructor(private quizz: QuizzService, private route: ActivatedRoute) {
+  constructor(
+    private quizz: QuizzService,
+    private route: ActivatedRoute,
+    private router: Router) {
   }
 
   ngOnInit() {
@@ -28,6 +31,21 @@ export class QuestionComponent implements OnInit {
         this.quizz.initProgress() :
         this.quizz.getProgress();
     });
+  }
+
+  next() {
+    // answer ckeck
+    if (this.answer.value === this.q.questions[this.p.questionId].correctAnswer) {
+      this.p.score++;
+    }
+    // last question ?
+    this.p.questionId++;
+    this.quizz.setProgress(this.p);
+    if (this.p.questionId === this.q.questions.length) {
+      this.router.navigate(['/', 'score']);
+      return;
+    }
+    this.router.navigate(['/', this.q.name, '/question/', this.p.questionId]);
   }
 
 }

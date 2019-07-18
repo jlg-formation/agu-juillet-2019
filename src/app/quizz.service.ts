@@ -67,7 +67,7 @@ export class QuizzService {
       questionId: 0,
       score: 0,
     };
-    localStorage.setItem('progress', JSON.stringify(p));
+    this.setProgress(p);
     return this.getProgress();
   }
   getProgress(): QuizzProgress {
@@ -76,5 +76,9 @@ export class QuizzService {
       return null;
     }
     return JSON.parse(str);
-   }
+  }
+
+  setProgress(p: QuizzProgress) {
+    localStorage.setItem('progress', JSON.stringify(p));
+  }
 }

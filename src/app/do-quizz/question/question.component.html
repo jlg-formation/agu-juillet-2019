@@ -7,5 +7,5 @@
     <span>{{q.questions[p.questionId]['answer' + i]}}</span>
   </label>
 </div>
-<button class="primary" routerLink="/score" [disabled]="answer.invalid">Suivant</button>
+<button class="primary" (click)="next()" [disabled]="answer.invalid">Suivant</button>
 
