@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HttpClientModule } from '@angular/common/http';
 
 import { DoQuizzModule } from './do-quizz/do-quizz.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -31,6 +32,7 @@ import { QuizzHttpService } from './quizz-http.service';
     BrowserModule,
     ReactiveFormsModule,
     FontAwesomeModule,
+    HttpClientModule,
 
     AppRoutingModule,
     LayoutModule,
