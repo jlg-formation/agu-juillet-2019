@@ -1,4 +1,6 @@
-<h1>Quizz: {{q.name}}</h1>
-<h2>Nb questions: {{q.questions.length}}</h2>
-<button appFocus class="primary" routerLink="/add-question">Ajouter une question</button>
-<button *ngIf="q.questions.length > 0" (click)="finish()">Terminer</button>
+<ng-container *ngIf="q">
+  <h1>Quizz: {{q.name}}</h1>
+  <h2>Nb questions: {{q.questions.length}}</h2>
+  <button appFocus class="primary" routerLink="/add-question">Ajouter une question</button>
+  <button *ngIf="q.questions.length > 0" (click)="finish()">Terminer</button>
+</ng-container>
