@@ -1,4 +1,6 @@
-<fa-icon [icon]="faSmileWink"></fa-icon>
-<h1>Bravo !</h1>
-<p>Ton score : {{p.score}} / {{q.questions.length}}</p>
-<button routerLink="/" class="primary">Retour Accueil</button>
+<ng-container *ngIf="p">
+  <fa-icon [icon]="faSmileWink"></fa-icon>
+  <h1>Bravo !</h1>
+  <p>Ton score : {{p.score}} / {{q.questions.length}}</p>
+  <button routerLink="/" class="primary">Retour Accueil</button>
+</ng-container>
