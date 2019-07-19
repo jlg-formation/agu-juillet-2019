@@ -49,6 +49,7 @@ export class QuestionComponent implements OnInit {
       return;
     }
     this.answer.reset();
+    this.timerComponent.ngOnDestroy();
     this.timerComponent.ngOnInit();
     this.router.navigate(['/', this.q.name, 'question', this.p.questionId + 1]);
   }

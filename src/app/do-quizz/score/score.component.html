@@ -1,6 +1,9 @@
 <ng-container *ngIf="p">
-  <fa-icon [icon]="faSmileWink"></fa-icon>
-  <h1>Bravo !</h1>
+  <fa-icon [icon]="faSmileWink" *ngIf="p.score === q.questions.length; else poo" ></fa-icon>
+  <ng-template #poo>
+    <fa-icon [icon]="faPoo" ></fa-icon>
+  </ng-template>
+  <h1>{{p.score === q.questions.length ? 'Bravo !' : 'Peut mieux faire !'}}</h1>
   <p>Ton score : {{p.score}} / {{q.questions.length}}</p>
   <button routerLink="/" class="primary">Retour Accueil</button>
 </ng-container>

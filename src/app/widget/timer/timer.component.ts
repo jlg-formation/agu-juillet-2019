@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Observable, Observer, interval, Subject, BehaviorSubject } from 'rxjs';
+import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angular/core';
+import { Observable, Observer, interval, Subject, BehaviorSubject, Subscription } from 'rxjs';
 import { startWith, scan, take } from 'rxjs/operators';
 
 const sleep = time => new Promise(resolve => setTimeout(resolve, time));
@@ -9,7 +9,7 @@ const sleep = time => new Promise(resolve => setTimeout(resolve, time));
   templateUrl: './timer.component.html',
   styleUrls: ['./timer.component.scss']
 })
-export class TimerComponent implements OnInit {
+export class TimerComponent implements OnInit, OnDestroy {
 
   @Input() init = 60;
 
@@ -19,13 +19,15 @@ export class TimerComponent implements OnInit {
   obs2: Observable<number>;
   subject: Subject<number>;
 
+  subscription: Subscription;
+
   constructor() {
 
   }
 
   ngOnInit() {
     this.obs = new Observable<number>((observer: Observer<number>) => {
-      (async () => {
+       (async () => {
         let count = this.init;
         observer.next(count);
         while (count > 0) {
@@ -34,6 +36,7 @@ export class TimerComponent implements OnInit {
           observer.next(count);
         }
         observer.complete();
+
       })();
     });
 
@@ -48,15 +51,18 @@ export class TimerComponent implements OnInit {
 
     this.subject = new BehaviorSubject<number>(this.init);
 
-    this.obs2.subscribe(this.subject);
+    this.subscription = this.obs2.subscribe(this.subject);
     this.subject.subscribe({
       complete: () => {
         console.log('complete');
         this.timerTimeout.emit('trop tard...');
       }
     });
+  }
 
-
+  ngOnDestroy(): void {
+    // interromp observable
+    this.subscription.unsubscribe();
   }
 
 }
