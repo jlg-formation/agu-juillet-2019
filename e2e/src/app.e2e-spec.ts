@@ -11,24 +11,24 @@ describe('workspace-project App', () => {
   beforeEach(() => {
   });
 
-  it('should display creer quizz', () => {
+  it('should display creer quizz', async () => {
     page = new AppPage();
-    page.navigateTo();
+    await page.navigateTo();
     expect(page.getFirstButtonContent()).toEqual('Créer un Quizz');
   });
 
-  it('should go to create page', () => {
-    page.clickOnCreateQuizzButton();
+  it('should go to create page', async () => {
+    await page.clickOnCreateQuizzButton();
     createPage = new CreatePage();
-    const text = createPage.getLabel();
+    const text = await createPage.getLabel();
     expect(text).toEqual('Nom du Quizz');
   });
 
-  it('should create a quizz name', () => {
-    createPage.writeOnInput('titi');
-    createPage.clickOnSubmitButton();
+  it('should create a quizz name', async () => {
+    await createPage.writeOnInput('titi');
+    await createPage.clickOnSubmitButton();
     setupPage = new SetupPage();
-    const text = setupPage.getTitleText();
+    const text = await setupPage.getTitleText();
     expect(text).toEqual('Quizz: titi');
   });
 
