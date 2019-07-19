@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Quizz } from 'src/app/quizz';
 import { QuizzService } from 'src/app/quizz.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { QuizzProgress } from 'src/app/quizz-progress';
 import { FormControl, Validators } from '@angular/forms';
+import { TimerComponent } from 'src/app/widget/timer/timer.component';
 
 @Component({
   selector: 'app-question',
@@ -11,6 +12,8 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrls: ['./question.component.scss']
 })
 export class QuestionComponent implements OnInit {
+
+  @ViewChild(TimerComponent, { static: false }) timerComponent: TimerComponent;
 
   answer = new FormControl('', Validators.required);
   timerValue = 10;
@@ -46,7 +49,12 @@ export class QuestionComponent implements OnInit {
       return;
     }
     this.answer.reset();
+    this.timerComponent.ngOnInit();
     this.router.navigate(['/', this.q.name, 'question', this.p.questionId + 1]);
+  }
+
+  hello(str: string) {
+    console.log('finished', str);
   }
 
 }

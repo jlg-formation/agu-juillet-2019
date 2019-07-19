@@ -40,7 +40,7 @@ export class TimerComponent implements OnInit {
     this.obs2 = interval(1000).pipe(
       startWith(0),
       scan(acc => {
-        console.log('obs', acc);
+        console.log('obs', acc - 1);
         return acc - 1;
       }, this.init + 1),
       take(this.init + 1)
@@ -49,9 +49,14 @@ export class TimerComponent implements OnInit {
     this.subject = new BehaviorSubject<number>(this.init);
 
     this.obs2.subscribe(this.subject);
+    this.subject.subscribe({
+      complete: () => {
+        console.log('complete');
+        this.timerTimeout.emit('trop tard...');
+      }
+    });
 
-    const sum = new Array(10).fill(0).map((n, i) => i + 1).reduce((acc, n) => acc * n, 1);
-    console.log('sum', sum);
+
   }
 
 }
