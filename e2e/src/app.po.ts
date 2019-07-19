@@ -6,7 +6,6 @@ export class AppPage {
   }
 
   getFirstButtonContent() {
-    console.log('toto');
     return element(by.css('app-root button')).getText() as Promise<string>;
   }
 
