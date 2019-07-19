@@ -13,7 +13,7 @@ import { FormControl, Validators } from '@angular/forms';
 export class QuestionComponent implements OnInit {
 
   answer = new FormControl('', Validators.required);
-  timerValue = 90;
+  timerValue = 10;
   q: Quizz;
   p: QuizzProgress = { questionId: 0, score: 0 };
   constructor(
@@ -46,7 +46,7 @@ export class QuestionComponent implements OnInit {
       return;
     }
     this.answer.reset();
-    this.router.navigate(['/', this.q.name, 'question', this.p.questionId]);
+    this.router.navigate(['/', this.q.name, 'question', this.p.questionId + 1]);
   }
 
 }
