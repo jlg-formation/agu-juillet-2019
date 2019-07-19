@@ -1,5 +1,6 @@
 import { AppPage } from './app.po';
 import { browser, logging } from 'protractor';
+import { CreatePage } from './create.po';
 
 describe('workspace-project App', () => {
   let page: AppPage;
@@ -8,9 +9,16 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display creer quizz', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Hello Jean-Louis');
+    expect(page.getFirstButtonContent()).toEqual('Créer un Quizz');
+  });
+
+  it('should go to create page', () => {
+    page.clickOnCreateQuizzButton();
+    const createPage = new CreatePage();
+    const text = createPage.getLabel();
+    expect(text).toEqual('Nom du Quizz');
   });
 
   afterEach(async () => {

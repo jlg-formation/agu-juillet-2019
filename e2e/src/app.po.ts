@@ -5,7 +5,13 @@ export class AppPage {
     return browser.get(browser.baseUrl) as Promise<any>;
   }
 
-  getTitleText() {
-    return element(by.css('app-root h1')).getText() as Promise<string>;
+  getFirstButtonContent() {
+    console.log('toto');
+    return element(by.css('app-root button')).getText() as Promise<string>;
+  }
+
+  clickOnCreateQuizzButton(): Promise<void> {
+    const button = element(by.css('app-root button'));
+    return button.click() as Promise<void>;
   }
 }
