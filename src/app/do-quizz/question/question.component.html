@@ -1,6 +1,6 @@
 <ng-container *ngIf="q">
   <h1>Quizz: {{q.name}}</h1>
-  <h2>Question {{p.questionId + 1}}</h2>
+  <h2>Question {{p.questionId + 1}} (<app-timer [init]="timerValue" (timerTimeout)="next()"></app-timer>)</h2>
   <p>{{q.questions[p.questionId].label}}</p>
   <div class="answers">
     <label *ngFor="let i of ['A', 'B', 'C', 'D' ]">
